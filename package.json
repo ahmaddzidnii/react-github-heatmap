@@ -1,7 +1,7 @@
 {
   "name": "@ahmaddzidnii/react-github-heatmap",
-  "version": "1.0.1",
-  "description": "React-github-heatmapis a React library for displaying contribution-style heatmaps similar to GitHub's profile activity graph. It is designed to be lightweight, customizable, and easy to integrate into any React project. With support for custom data, flexible theming, and responsive design, this library is perfect for visualizing user activity, analytics, and time-based data patterns. 🚀",
+  "version": "1.1.0",
+  "description": "React-github-heatmap is a React library for displaying contribution-style heatmaps similar to GitHub's profile activity graph. It is designed to be lightweight, customizable, and easy to integrate into any React project. With support for custom data, flexible theming, and responsive design, this library is perfect for visualizing user activity, analytics, and time-based data patterns. 🚀",
   "license": "MIT",
   "author": "ahmaddzidnii",
   "main": "dist/cjs/index.js",
@@ -16,16 +16,14 @@
   "keywords": [
     "react",
     "heatmap",
-    "calender-heatmap",
+    "calendar-heatmap",
     "github-heatmap",
     "react-heatmap",
     "react-github-heatmap",
     "react-calendar-heatmap",
     "react-activity-heatmap",
     "react-activity-graph",
-    "react-activity-calendar",
-    "react-activity-heatmap",
-    "react-activity-graph"
+    "react-activity-calendar"
   ],
   "repository": {
     "type": "git",
@@ -37,8 +35,9 @@
     "@rollup/plugin-node-resolve": "^16.0.1",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^12.1.2",
-    "@types/react": "^19.0.11",
-    "react": "^19.0.0",
+    "@types/react": "^18.0.28",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "rollup": "^4.36.0",
     "rollup-plugin-dts": "^6.1.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
@@ -50,8 +49,8 @@
     "react-tooltip": "^5.28.0"
   },
   "peerDependencies": {
-    "react": ">=18.0.0 <20.0.0",
-    "react-dom": ">=18.0.0 <20.0.0"
+    "react": ">=18.0.0 <19.0.0",
+    "react-dom": ">=18.0.0 <19.0.0"
   },
   "publishConfig": {
     "access": "public"

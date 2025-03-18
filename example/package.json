@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@ahmaddzidnii/react-github-heatmap": "^1.0.1",
+    "@ahmaddzidnii/react-github-heatmap": "^1.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
