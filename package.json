@@ -1,6 +1,6 @@
 {
   "name": "@ahmaddzidnii/react-github-heatmap",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React-github-heatmapis a React library for displaying contribution-style heatmaps similar to GitHub's profile activity graph. It is designed to be lightweight, customizable, and easy to integrate into any React project. With support for custom data, flexible theming, and responsive design, this library is perfect for visualizing user activity, analytics, and time-based data patterns. 🚀",
   "license": "MIT",
   "author": "ahmaddzidnii",
