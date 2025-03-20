@@ -1,6 +1,4 @@
-// import { ReactGithubHeatmap } from "./components/ReactGithubHeatmap";
-
-import { ReactGithubHeatmap } from "../dist/esm/index";
+import { ReactGithubHeatmap } from "./components/ReactGithubHeatmap";
 
 function generateDataByDateRange(startDate: string, endDate: string) {
   const start = new Date(startDate);
