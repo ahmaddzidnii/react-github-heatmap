@@ -31,7 +31,7 @@ export default [
       terser(),
       postCss(),
     ],
-    external: ["react", "react-dom", "react-tooltip"],
+    external: ["react", "react-dom", "react-tooltip", "classnames"],
   },
   {
     input: "src/index.ts",
