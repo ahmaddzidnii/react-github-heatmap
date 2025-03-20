@@ -1,0 +1,144 @@
+[data-level="0"] {
+  background-color: #ebedf0;
+}
+
+[data-level="1"] {
+  background-color: #9be9a8;
+}
+
+[data-level="2"] {
+  background-color: #40c463;
+}
+
+[data-level="3"] {
+  background-color: #30a14e;
+}
+
+[data-level="4"] {
+  background-color: #216e39;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.contribution-graph {
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  padding: 16px;
+  width: max-content;
+}
+
+.contribution-graph__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.contribution-graph__table-wrapper {
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: calc(100vw - 32px);
+}
+
+.contribution-graph__table {
+  width: max-content;
+  overflow: hidden;
+  position: relative;
+  border-collapse: separate;
+  padding: 0 16px 0 16px;
+}
+
+.contribution-graph__months-row {
+  height: 13px;
+}
+
+.contribution-graph__day-label {
+  width: 12px;
+}
+
+.contribution-graph__month {
+  font-size: 12px;
+  padding: 0.125rem 0.5rem 0.125rem 0;
+}
+
+.contribution-graph__week-row {
+  height: 10px;
+}
+
+.contribution-graph__day-label-wrapper {
+  position: relative;
+  width: 28px;
+  text-align: right;
+}
+
+.contribution-graph__day-label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0px;
+  font-size: 12px;
+  padding: 0.125rem 0.5rem 0.125rem 0;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+
+.contribution-graph__cell {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  outline: 1px solid rgba(27, 31, 35, 0.06);
+  outline-offset: -1px;
+}
+
+.contribution-graph__legend {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 48px;
+  padding-right: 16px;
+  margin-top: 0.25rem;
+}
+
+.contribution-graph__legend-text {
+  font-size: 12px;
+}
+
+.contribution-graph__legend-scale {
+  display: flex;
+  align-items: center;
+}
+
+.contribution-graph__legend-box {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  outline: 1px solid rgba(27, 31, 35, 0.06);
+  outline-offset: -1px;
+  margin-right: 0.25rem;
+}
+
+.contribution-graph__legend-label {
+  font-size: 12px;
+}
+
+.mr-1 {
+  margin-right: 0.25rem;
+}
