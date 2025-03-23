@@ -39,6 +39,7 @@
   border-radius: 6px;
   padding: 16px;
   width: max-content;
+  min-width: 230px;
 }
 
 .contribution-graph__container {
@@ -145,4 +146,10 @@
 
 .mr-1 {
   margin-right: 0.25rem;
+}
+
+@media only screen and (max-width: 406px) {
+  .contribution-graph__legend {
+    flex-direction: column;
+  }
 }
