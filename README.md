@@ -150,13 +150,24 @@ You can customize the colors of the heatmap by adding your own CSS classes. For 
 1. Create a CSS file (e.g., `styles.css`) and define your custom styles:
 
 ```css
-.custom-heatmap .heatmap-cell {
-  background-color: #4caf50; /* Custom green color */
-  border-radius: 4px; /* Rounded corners */
+[data-level="0"] {
+  background-color: #ebedf0 !important;
 }
 
-.custom-heatmap .heatmap-cell:hover {
-  background-color: #388e3c; /* Darker green on hover */
+[data-level="1"] {
+  background-color: #9be9a8 !important;
+}
+
+[data-level="2"] {
+  background-color: #40c463 !important;
+}
+
+[data-level="3"] {
+  background-color: #30a14e !important;
+}
+
+[data-level="4"] {
+  background-color: #216e39 !important;
 }
 ```
 
@@ -184,7 +195,6 @@ const App = () => {
     >
       <ReactGithubHeatmap
         data={data}
-        className="custom-heatmap" // Apply the custom class
         tooltipContent={(t) => {
           if (!t.contributions) {
             return `No contributions on ${t.date}`;
