@@ -30,6 +30,10 @@ const ReactGithubHeatmap = ({
     endDate: TODAY,
   });
 
+  if (!!props.startDate !== !!props.endDate) {
+    throw new Error("Both startDate and endDate must be provided together.");
+  }
+
   const DEFAULT_START_DATE = dateRange.startDate;
   const DEFAULT_END_DATE = dateRange.endDate;
 

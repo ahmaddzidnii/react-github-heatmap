@@ -55,7 +55,11 @@ const App = () => {
         height: "100vh",
       }}
     >
-      <ReactGithubHeatmap data={data} />
+      <ReactGithubHeatmap
+        data={data}
+        startDate="2024-04-01"
+        endDate="2025-04-01"
+      />
     </div>
   );
 };

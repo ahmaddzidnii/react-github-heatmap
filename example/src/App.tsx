@@ -1,7 +1,7 @@
-import { GithubGraphContribution } from "@ahmaddzidnii/react-github-heatmap";
+import { ReactGithubHeatmap } from "@ahmaddzidnii/react-github-heatmap";
 import "./App.css";
 
-function generateDataByDateRange(startDate: string, endDate: string) {
+const generateDataByDateRange = (startDate: string, endDate: string) => {
   const start = new Date(startDate);
   const end = new Date(endDate);
   const generatedData = [];
@@ -18,9 +18,9 @@ function generateDataByDateRange(startDate: string, endDate: string) {
   }
 
   return generatedData;
-}
+};
 
-export const get52WeeksDateRange = ({ endDate }: { endDate: Date }) => {
+const get52WeeksDateRange = ({ endDate }: { endDate: Date }) => {
   // Go back approximately one year (52 weeks)
   let startDate = new Date(endDate);
   startDate.setDate(endDate.getDate() - 52 * 7);
@@ -48,14 +48,8 @@ function App() {
   const data = generateDataByDateRange(dateRange.startDate, dateRange.endDate);
 
   return (
-    <div
-      style={{
-        border: "1px solid #ccc",
-        borderRadius: 8,
-        padding: 16,
-      }}
-    >
-      <GithubGraphContribution data={data} />
+    <div>
+      <ReactGithubHeatmap data={data} />
     </div>
   );
 }

@@ -18,6 +18,10 @@
   background-color: #216e39;
 }
 
+.contribution-graph * {
+  box-sizing: border-box;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;

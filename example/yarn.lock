@@ -2,11 +2,12 @@
 # yarn lockfile v1
 
 
-"@ahmaddzidnii/react-github-heatmap@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@ahmaddzidnii/react-github-heatmap/-/react-github-heatmap-1.1.0.tgz#967d7dce206dce1f71587ef0af771a8eb946dfcf"
-  integrity sha512-xdwyAgnNrnu/0uYAcVJBvjsvptZletrS81jjK5k6kmg8Asbjb9UgfpHHZMZdFlvNTY+1F9g188RXQlMcNZHpJQ==
+"@ahmaddzidnii/react-github-heatmap@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@ahmaddzidnii/react-github-heatmap/-/react-github-heatmap-1.2.0.tgz#46ecbf0b1820ee9e81a8ea73eef2cde1055d75dd"
+  integrity sha512-zH4msH5q5dnKxFah5WzNHdjd6/PiEW0kV9fKnveQZg81+hYuJRRPbxWP6+rYDAoGGYgJPRSkraiGimVjB2Rn0Q==
   dependencies:
+    classnames "^2.5.1"
     react-tooltip "^5.28.0"
 
 "@ampproject/remapping@^2.2.0":
@@ -791,7 +792,7 @@ chalk@^4.0.0:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
 
-classnames@^2.3.0:
+classnames@^2.3.0, classnames@^2.5.1:
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.5.1.tgz#ba774c614be0f016da105c858e7159eae8e7687b"
   integrity sha512-saHYOzhIQs6wy2sVxTM6bUDsQO4F50V9RQ22qBpEdCW+I+/Wmke2HOl6lS6dTpdxVhb88/I6+Hs+438c3lfUow==
