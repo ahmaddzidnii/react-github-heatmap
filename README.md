@@ -12,18 +12,20 @@
 <div align="center"><strong>React Heatmap – Visualize Data with Style.</strong></div>
 <div align="center"> React Heatmap is a lightweight, highly customizable, and beautifully designed heatmap component for React. Whether you're tracking user interactions, visualizing complex datasets, or enhancing dashboards, this package makes it effortless to create stunning heatmaps.</div>
 <br />
-<!-- <div align="center">
-<a href="https://react-hot-toast.com/">Website</a> 
-<span> · </span>
-<a href="https://react-hot-toast.com/docs">Documentation</a> 
-<span> · </span>
-<a href="https://twitter.com/timolins">Twitter</a>
-</div> -->
 
-<br />
 <div align="center">
   <sub>Cooked by <a href="https://github.com/ahmaddzidnii">ahmaddzidniii</a> 👨‍🍳</sub>
 </div>
+
+<br />
+
+## Table of Contents
+
+- [Features](#features)
+- [Installation](#installation)
+- [Getting Started](#getting-started)
+- [Customizing Colors](#customizing-colors)
+- [API](#api)
 
 <br />
 
@@ -121,24 +123,92 @@ const App = () => {
         height: "100vh",
       }}
     >
-      <ReactGithubHeatmap data={data} />
+      <ReactGithubHeatmap
+        data={data}
+        tooltipContent={(t) => {
+          if (!t.contributions) {
+            return `No contributions on ${t.date}`;
+          }
+
+          return `${t.contributions} contributions on ${t.date}`;
+        }}
+        tooltipOptions={{
+          place: "top",
+        }}
+      />
     </div>
   );
 };
 ```
 
+## Customizing Colors
+
+You can customize the colors of the heatmap by adding your own CSS classes. For example, you can define a custom class in your CSS file and apply it to the heatmap.
+
+### Example
+
+1. Create a CSS file (e.g., `styles.css`) and define your custom styles:
+
+```css
+.custom-heatmap .heatmap-cell {
+  background-color: #4caf50; /* Custom green color */
+  border-radius: 4px; /* Rounded corners */
+}
+
+.custom-heatmap .heatmap-cell:hover {
+  background-color: #388e3c; /* Darker green on hover */
+}
+```
+
+2. Import the CSS file into your React component:
+
+```tsx
+import "./styles.css";
+import { ReactGithubHeatmap } from "@ahmaddzidnii/react-github-heatmap";
+import { get52WeeksDateRange, generateDataByDateRange } from "./helpers";
+
+const App = () => {
+  const { endDate, startDate } = get52WeeksDateRange({
+    endDate: new Date(),
+  });
+  const data = generateDataByDateRange(startDate, endDate);
+
+  return (
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "100vh",
+      }}
+    >
+      <ReactGithubHeatmap
+        data={data}
+        className="custom-heatmap" // Apply the custom class
+        tooltipContent={(t) => {
+          if (!t.contributions) {
+            return `No contributions on ${t.date}`;
+          }
+
+          return `${t.contributions} contributions on ${t.date}`;
+        }}
+        tooltipOptions={{
+          place: "top",
+        }}
+      />
+    </div>
+  );
+};
+```
+
+3. Run your application, and the heatmap will now use the custom styles defined in your CSS file.
+
 ## API
 
-<!-- ✓  -->
-
-| Prop           | Type       | Description                                                             |
-| -------------- | ---------- | ----------------------------------------------------------------------- |
-| data           | `[{}]`     | Array of objects containing `date` and `contributions` for the heatmap. |
-| startDate      | `string`   | The start date for the heatmap data range in `YYYY-MM-DD` format.       |
-| endDate        | `string`   | The end date for the heatmap data range in `YYYY-MM-DD` format.         |
-| tooltipContent | `function` | Function to customize the content of the tooltip displayed on hover.    |
-| tooltipOptions | `{}`       | Object to configure tooltip behavior and appearance.                    |
-
-<!-- ## Documentation
-
-Find the full API reference on [official documentation](https://react-hot-toast.com/docs). -->
+| Prop           | Type         | Description                                                                                                                   |
+| -------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------- |
+| data           | `arrayofobj` | Array of objects containing `date` and `contributions` for the heatmap.                                                       |
+| startDate      | `string`     | The start date for the heatmap data range in `YYYY-MM-DD` format.                                                             |
+| endDate        | `string`     | The end date for the heatmap data range in `YYYY-MM-DD` format.                                                               |
+| tooltipContent | `function`   | Function to customize the content of the tooltip displayed on hover.                                                          |
+| tooltipOptions | `object`     | Object to configure tooltip behavior and appearance. [See React Tooltip Docs](https://react-tooltip.com/docs/getting-started) |
