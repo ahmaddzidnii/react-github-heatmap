@@ -12,6 +12,7 @@ import { ReactGithubHeatmapProps } from "./types";
 import { levels, dayLabels } from "../../constant/index";
 
 import "./ReactGithubHeatmap.css";
+import { MonthRow } from "../MonthRow";
 
 const ReactGithubHeatmap = ({
   tooltipContent = (contribution) => {
@@ -57,7 +58,7 @@ const ReactGithubHeatmap = ({
     return tooltipContent(contribution as { date: string; contributions: number });
   };
 
-  // Hitung threshold sekali di awal render
+  // Calculate thresholds for each level in first render
   const thresholds = useMemo(() => {
     const nonZeroContributions = contributionData
       .filter((item) => item.contributions > 0)
@@ -75,11 +76,14 @@ const ReactGithubHeatmap = ({
     };
   }, [contributionData]);
 
-  // Fungsi yang akan dipanggil untuk setiap sel
+  // Function to get level of a date based on contribution count
   const getLevel = useCallback(
     (date: Date) => {
       if (!date) return 0;
-      const dateStr = date.toISOString().split("T")[0];
+      const dateStr = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(
+        2,
+        "0"
+      )}-${String(date.getDate()).padStart(2, "0")}`;
       const contribution = contributionData.find((item) => item.date === dateStr);
 
       if (!contribution || contribution.contributions === 0) return 0;
@@ -100,23 +104,7 @@ const ReactGithubHeatmap = ({
         <div className="contribution-graph__table-wrapper">
           <table className="contribution-graph__table">
             <caption className="sr-only">Contribution Graph</caption>
-            <thead>
-              <tr className="contribution-graph__months-row">
-                <td className=" contribution-graph__day-label">
-                  <span className="sr-only">Day of Week</span>
-                </td>
-                {months.map((month, index) => (
-                  <td
-                    key={`${month.name}-${month.year}-${index}`}
-                    colSpan={month.colSpan}
-                    className="contribution-graph__month"
-                  >
-                    <span className="sr-only">{month.name}</span>
-                    <span>{month.name.slice(0, 3)}</span>
-                  </td>
-                ))}
-              </tr>
-            </thead>
+            <MonthRow months={months} />
             <tbody>
               {dateGrid.map((row, rowIndex) => (
                 <tr
